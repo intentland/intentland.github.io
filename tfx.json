@@ -1,0 +1,53 @@
+{
+    "@context": {
+        "@version": 1.1,
+        "@base": "http://intent.land/tfx/0.0.1/",
+        "tfx": "http://intent.land/tfx/0.0.1/",
+        "schema": "http://schema.org/",
+        "identifier": {
+            "@id": "@id",
+            "@type": "schema:url"
+        },
+        "member": "@type",
+        "name": "tfx:name",
+        "command": "tfx:command",
+        "terminology": {
+            "@id": "tfx:terminology",
+            "@container": "@id"
+        },
+        "terms": {
+            "@id": "tfx:term",
+            "@container": "@id"
+        },
+        "cases": {
+            "@id": "tfx:case",
+            "@container": "@set"
+        },
+        "pattern": "@value"
+    },
+    "@id": "",
+    "@graph": [
+        {
+           "@id": "name",
+           "@type": "schema:termCode"
+        },
+        {
+           "@id": "command",
+           "@type": "schema:DefinedTerm"
+        },
+        {
+           "@id": "terminology",
+           "@type": "schema:DefinedTermSet"
+        },
+        {
+           "@id": "term",
+           "@type": "schema:DefinedTerm"
+        },
+        {
+           "@id": "case",
+           "@type": "schema:Property",
+           "domainIncludes": ["tfx:term", "tfx:command"],
+           "rangeIncludes": "schema:StructuredValue"
+        }
+    ]
+}
